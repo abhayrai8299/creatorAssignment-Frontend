@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('https://creator-assignment-backend-production.up.railway.app/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
