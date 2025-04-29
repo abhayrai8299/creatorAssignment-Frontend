@@ -13,7 +13,7 @@ const AdminDashboard = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:3000/admin/users', {
+      const res = await axios.get(`${BASE_URL}/admin/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const normalUsers = res.data.filter(user => user.role !== 'admin');
@@ -29,7 +29,7 @@ const AdminDashboard = () => {
   const fetchUserFeedActivity = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:3000/admin/feed/activity', {
+      const res = await axios.get(`${BASE_URL}/admin/feed/activity`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUserFeedActivity(res.data);
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
   
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:3000/admin/credits/${userId}`, { credits }, {
+      await axios.put(`${BASE_URL}/admin/credits/${userId}`, { credits }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Credits updated successfully');

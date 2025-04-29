@@ -16,7 +16,7 @@ function Profile() {
 
         // Fetching user data
         const fetchUserData = async () => {
-            const res = await fetch('http://localhost:3000/dashboard', {
+            const res = await fetch(`${BASE_URL}/dashboard`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const data = await res.json();
@@ -34,7 +34,7 @@ function Profile() {
 
         const updatedProfile = { bio, profilePicture };
 
-        const res = await fetch('http://localhost:3000/complete-profile', {
+        const res = await fetch(`${BASE_URL}//complete-profile`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

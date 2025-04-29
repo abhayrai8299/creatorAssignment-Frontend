@@ -8,7 +8,7 @@ function Feed() {
   useEffect(() => {
     async function fetchFeed() {
       try {
-        const res = await axios.get('http://localhost:3000/feed');
+        const res = await axios.get(`${BASE_URL}/feed`);
         setPosts(res.data);
       } catch (error) {
         console.error('Error fetching feed:', error);

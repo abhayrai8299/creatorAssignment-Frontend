@@ -14,7 +14,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/register', formData);
+      await axios.post(`${BASE_URL}/register`, formData);
       navigate('/login');
     } catch (error) {
       console.error('Error registering user:', error);

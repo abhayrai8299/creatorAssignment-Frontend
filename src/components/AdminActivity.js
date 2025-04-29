@@ -8,7 +8,7 @@ const AdminActivity = () => {
 
   const fetchActivity = async () => {
     const token = localStorage.getItem('token');
-    const res = await axios.get('/admin/feed/activity', {
+    const res = await axios.get(`${BASE_URL}/admin/feed/activity`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setActivity(res.data);

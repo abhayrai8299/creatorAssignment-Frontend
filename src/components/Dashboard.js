@@ -17,7 +17,7 @@ function Dashboard() {
 
     // Fetching User Data
     const fetchUserData = async () => {
-      const res = await fetch('http://localhost:3000/dashboard', {
+      const res = await fetch(`${BASE_URL}/dashboard`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -28,7 +28,7 @@ function Dashboard() {
 
     // Fetching Feed Data
     const fetchFeedData = async () => {
-      const res = await fetch('http://localhost:3000/feed', {
+      const res = await fetch(`${BASE_URL}/feed`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -44,7 +44,7 @@ function Dashboard() {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    const res = await fetch('http://localhost:3000/feed/save', {
+    const res = await fetch(`${BASE_URL}/feed/save`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ function Dashboard() {
     }).catch((err) => {
       console.error("Error copying feed URL: ", err);
     });
-    const res = await fetch('http://localhost:3000/feed/share', {
+    const res = await fetch(`${BASE_URL}/feed/share`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ function Dashboard() {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    const res = await fetch('http://localhost:3000/feed/report', {
+    const res = await fetch(`${BASE_URL}/feed/report`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
