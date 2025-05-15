@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL  from "../api/api"
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);

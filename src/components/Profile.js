@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../api/api';
 
 function Profile() {
     const [user, setUser] = useState(null);
@@ -34,7 +35,7 @@ function Profile() {
 
         const updatedProfile = { bio, profilePicture };
 
-        const res = await fetch(`${BASE_URL}//complete-profile`, {
+        const res = await fetch(`${BASE_URL}/complete-profile`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

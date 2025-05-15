@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-
+import BASE_URL from '../api/api';
 function Register() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-
+import BASE_URL from '../api/api';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

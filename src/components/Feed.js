@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import BASE_URL from '../api/api';
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);

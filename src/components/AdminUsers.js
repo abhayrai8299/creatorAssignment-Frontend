@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import BASE_URL from '../api/api';
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
     const token = localStorage.getItem('token');
-    const res = await axios.get(`${BASE_URL}//admin/users`, {
+    const res = await axios.get(`${BASE_URL}/admin/users`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setUsers(res.data);
@@ -14,7 +15,7 @@ const AdminUsers = () => {
 
   const updateCredits = async (userId, credits) => {
     const token = localStorage.getItem('token');
-    await axios.put(`/admin/credits/${userId}`, { credits }, {
+    await axios.put(`${BASE_URL}/admin/credits/${userId}`, { credits }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     fetchUsers();
